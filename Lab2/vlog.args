@@ -1,0 +1,12 @@
++libext+.v
+-vlog01compat
++acc
+
+-y .
+-work work
+
+// RTL files
+Lab2.v
+
+// Testbench files
+Lab2_tb.v

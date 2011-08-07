@@ -1,0 +1,11 @@
+#!/bin/sh
+if [ -e work ]
+then
+	\rm -rf work
+fi
+
+vlib work
+vmap work work
+vlog -f ./vlog.args
+
+vsim -novopt -c Lab3_tb -do sim.do
