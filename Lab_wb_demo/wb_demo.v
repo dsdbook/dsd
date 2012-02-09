@@ -25,7 +25,8 @@ output  [31:0]    wb_dat_o;	// output data bus
 output  wb_ack_o;	// normal termination
 
 reg     [31:0]    wb_dat_o;
-reg     wb_ack_o;
+wire    wb_ack_o;
+reg     wb_ack_o_r;
 
 reg     [31:0]	A;
 reg     [31:0]	B;
@@ -45,10 +46,12 @@ assign  wb_read  =  wb_cyc_i & wb_stb_i & (!wb_we_i);
 always@(posedge wb_clk_i)
 begin
 	if(wb_rst_i)
-		wb_ack_o <= 1'b0;
+		wb_ack_o_r <= 1'b0;
 	else
-		wb_ack_o <= wb_cyc_i & wb_stb_i;
+		wb_ack_o_r <= wb_cyc_i & wb_stb_i;
 end
+
+assign wb_ack_o = wb_cyc_i & wb_stb_i & wb_ack_o_r;
 
 
 always@(posedge wb_clk_i)
