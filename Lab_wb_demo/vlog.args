@@ -1,0 +1,22 @@
++libext+.v
+-vlog01compat
++acc
+
++define+DUMP_FSDB
+
+-y .
+-work work
+
+
+
+// RTL files
+//
++incdir+.
+demo.v
+wb_demo.v
+
+//
+// Testbench files
+//
+wb_tb.v
+wb_mast_model.v
