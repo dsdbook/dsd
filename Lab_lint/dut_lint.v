@@ -29,7 +29,6 @@ module DUT_LINT(
     OUT_Y = ( ( IN_A | IN_B ) & ( IN_C ^ IN_D ) );
   end
 
-
   always @( posedge CLK or negedge RST_N )begin
     if( !RST_N )
       OUT_IF <= 3'd0;
@@ -46,7 +45,6 @@ module DUT_LINT(
         OUT_IF <= 3'd0;
     end
   end
-
 
   always @( posedge CLK )begin
     if( !RST_N )
