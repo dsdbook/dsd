@@ -13,6 +13,8 @@ if 0 {
 set_dont_use typical/MX4*
 }
 
+#create_clock -name sys_clk -period 10  [get_ports clk]
+
 compile
 
 set bus_inference_style {%s[%d]}
