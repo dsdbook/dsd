@@ -1,5 +1,5 @@
-module sel4to1_if(A,SEL,Y);
-input [3:0] A;
+module sel3to1_if(A,SEL,Y);
+input [2:0] A;
 input [1:0] SEL;
 output Y;
 reg Y;
@@ -11,7 +11,7 @@ begin
 		Y=A[1];
 	else if(SEL==2'b10)
 		Y=A[2];
-	else 	Y=A[3];
+	else 	Y=1'bx;
 
 end
 endmodule
