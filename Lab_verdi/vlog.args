@@ -1,0 +1,14 @@
++libext+.v
+-vlog01compat
++acc
++define+DUMP_FSDB
+
+-y .
+-work work
+
+// RTL files
+adder.v
+alu.v
+
+// Testbench files
+test_alu.v

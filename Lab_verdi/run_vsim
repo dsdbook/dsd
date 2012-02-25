@@ -1,0 +1,16 @@
+#!/bin/sh
+if [ -e work ]
+then
+	\rm -rf work
+fi
+
+#verdi env setting
+export PLATFORM=LINUX
+export NOVAS_INST_DIR=/opt/spring/verdi
+export LD_LIBRARY_PATH=$NOVAS_INST_DIR/share/PLI/lib/$PLATFORM:$LD_LIBRARY_PATH
+
+vlib work
+vmap work work
+vlog -f ./vlog.args
+
+vsim -pli $NOVAS_INST_DIR/share/PLI/MODELSIM/$PLATFORM/novas_fli.so -novopt test_alu -c -do "add wave -radix hex /*; run -all"
