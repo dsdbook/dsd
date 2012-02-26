@@ -1,0 +1,14 @@
++libext+.v
+-vlog01compat
++acc
+
+-y .
+-work work
+
+//+define+OUTPUT_TO_FILE
+
+// RTL files
+decoder38.v
+
+// Testbench files
+decoder38_tb.v
