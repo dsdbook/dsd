@@ -5,7 +5,7 @@ initial begin
     $display("not 1 = %x",~1'b1);
     $display("not x = %x",~1'bx);
     $display("not z = %x",~1'bz);
-
+// &
     $display("0 and 0 = %x", 1'b0 & 1'b0);
     $display("0 and 1 = %x", 1'b0 & 1'b1);
     $display("0 and x = %x", 1'b0 & 1'bx);
@@ -19,7 +19,7 @@ initial begin
     $display("x and z = %x", 1'bx & 1'bz);
 
     $display("z and z = %x", 1'bz & 1'bz);
-
+// |
     $display("0 or 0 = %x", 1'b0 | 1'b0);
     $display("0 or 1 = %x", 1'b0 | 1'b1);
     $display("0 or x = %x", 1'b0 | 1'bx);
@@ -33,6 +33,20 @@ initial begin
     $display("x or z = %x", 1'bx | 1'bz);
 
     $display("z or z = %x", 1'bz | 1'bz);
+// ^    
+    $display("0 xor 0 = %x", 1'b0 ^ 1'b0);
+    $display("0 xor 1 = %x", 1'b0 ^ 1'b1);
+    $display("0 xor x = %x", 1'b0 ^ 1'bx);
+    $display("0 xor z = %x", 1'b0 ^ 1'bz);
+
+    $display("1 xor 1 = %x", 1'b1 ^ 1'b1);
+    $display("1 xor x = %x", 1'b1 ^ 1'bx);
+    $display("1 xor z = %x", 1'b1 ^ 1'bz);
+
+    $display("x xor x = %x", 1'bx ^ 1'bx);
+    $display("x xor z = %x", 1'bx ^ 1'bz);
+
+    $display("z xor z = %x", 1'bz ^ 1'bz);
 
 end
 
