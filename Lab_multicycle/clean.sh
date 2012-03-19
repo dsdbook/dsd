@@ -1,0 +1,17 @@
+rm -rf *.log
+rm -rf *.wlf
+rm -rf simv*
+rm -rf work
+rm -rf transcript
+rm -rf INCA*
+rm -rf a.out
+rm -rf modelsim.ini
+rm -rf csrc
+rm -rf .vcs*
+rm -rf verdiLog
+rm -rf *.db
+rm -rf *.vg
+rm -rf *.svf
+rm -rf *.vcd
+rm -rf ncsim.key
+rm -rf waves.shm
