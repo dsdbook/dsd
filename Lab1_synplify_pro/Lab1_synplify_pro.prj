@@ -1,0 +1,75 @@
+#-- Synopsys, Inc.
+#-- Version E-2010.09-1
+#-- Project file F:\dsd\Lab1_synplify_pro\Lab1_synplify_pro.prj
+#-- Written on Sat Aug 13 17:56:10 2011
+
+
+#project files
+add_file -verilog "./Lab1.v"
+add_file -altera_par "./altera_par_1.tcl"
+add_file -constraint "./Lab1.sdc"
+
+
+#implementation: "rev_1"
+impl -add rev_1 -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+set_option -project_relative_includes 1
+
+#pr_1 attributes
+set_option -job pr_1 -add par
+set_option -job pr_1 -option enable_run 1
+set_option -job pr_1 -option use_placement_constraints 0
+set_option -job pr_1 -option option_file altera_par_1.tcl
+
+#device options
+set_option -technology CYCLONEII
+set_option -part EP2C70
+set_option -package FC896
+set_option -speed_grade -6
+set_option -part_companion ""
+
+#compilation/mapping options
+set_option -use_fsm_explorer 0
+
+# mapper_options
+set_option -frequency auto
+set_option -write_verilog 1
+set_option -write_vhdl 0
+
+# Altera STRATIX
+set_option -run_prop_extract 1
+set_option -maxfan 30
+set_option -disable_io_insertion 0
+set_option -pipe 1
+set_option -update_models_cp 0
+set_option -retiming 0
+set_option -no_sequential_opt 0
+set_option -fixgatedclocks 3
+set_option -fixgeneratedclocks 3
+set_option -quartus_version 9.1
+
+# NFilter
+set_option -popfeed 0
+set_option -constprop 0
+set_option -createhierarchy 0
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 0
+set_option -resource_sharing 1
+
+#VIF options
+set_option -write_vif 1
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "./rev_1/Lab1.vqm"
+impl -active "rev_1"

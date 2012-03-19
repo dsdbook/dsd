@@ -1,0 +1,13 @@
+#-- Synopsys, Inc.
+#-- Version E-2010.09-1
+#-- Project file F:\dsd\Lab1_synplify_pro\Lab1_synplify_pro.prd
+#-- Written on Sat Aug 13 17:56:10 2011
+
+#
+### Watch Implementation type ###
+#
+watch_impl -all
+#
+### Watch Implementation properties ###
+#
+watch_prop -clear
